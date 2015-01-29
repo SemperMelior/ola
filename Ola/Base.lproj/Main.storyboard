@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +14,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="0P5-aM-pZq">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95O-8u-rC9">
+                                    <rect key="frame" x="19" y="8" width="108" height="30"/>
+                                    <state key="normal" title="+ Add new item">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapNewItemFooterButton:" destination="UFE-Ev-Y6H" eventType="touchUpInside" id="kes-XM-ObT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Food Item Cell" textLabel="kAa-aH-PF6" detailTextLabel="g4V-wf-4fU" style="IBUITableViewCellStyleValue1" id="1Hn-va-LMR">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +64,7 @@
                                 <segue destination="mjb-PN-fWn" kind="push" identifier="insulin Injection" id="FPX-p6-TZn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="NyN-84-u3N">
+                        <barButtonItem key="rightBarButtonItem" title="+" systemItem="add" id="NyN-84-u3N">
                             <connections>
                                 <action selector="newFoodItemTap:" destination="UFE-Ev-Y6H" id="nR7-UN-RQ9"/>
                             </connections>
@@ -211,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.19215686274509802" green="0.91764705882352937" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.23921568627450981" green="0.58431372549019611" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
                                 <color key="value" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,7 +238,6 @@
                     <connections>
                         <outlet property="tabBar" destination="W28-zg-YXA" id="Zpc-iB-bAx"/>
                         <segue destination="dPo-Z0-4hs" kind="relationship" relationship="viewControllers" id="vWD-tS-Wk0"/>
-                        <segue destination="vSI-3V-VNA" kind="relationship" relationship="viewControllers" id="X03-Sb-eGx"/>
                         <segue destination="CcJ-mn-BRm" kind="relationship" relationship="viewControllers" id="qmG-mS-XV7"/>
                         <segue destination="8H1-Gf-f88" kind="relationship" relationship="viewControllers" id="zzR-bh-LNO"/>
                         <segue destination="jZP-1p-Ebm" kind="relationship" relationship="viewControllers" id="JAB-5h-wUq"/>
@@ -607,7 +623,7 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkI-0N-ezk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
-                                <color key="backgroundColor" red="0.19215686274509802" green="0.90980392156862744" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.23921568627450981" green="0.58431372549019611" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -789,7 +805,7 @@ ETA: 6 MIN</string>
             </objects>
             <point key="canvasLocation" x="-2327" y="-584"/>
         </scene>
-        <!--Glucose-->
+        <!--History-->
         <scene sceneID="GW8-Ha-ipg">
             <objects>
                 <viewController id="dPo-Z0-4hs" sceneMemberID="viewController">
@@ -802,7 +818,7 @@ ETA: 6 MIN</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="glucose_screen" translatesAutoresizingMaskIntoConstraints="NO" id="6di-qy-4nV">
-                                <rect key="frame" x="150" y="186" width="300" height="180"/>
+                                <rect key="frame" x="150" y="145" width="300" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="C9k-KD-cDr"/>
                                     <constraint firstAttribute="width" constant="300" id="YL3-h4-4Oz"/>
@@ -811,70 +827,45 @@ ETA: 6 MIN</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-Sr-zEj">
-                                <rect key="frame" x="225" y="157" width="151" height="21"/>
+                                <rect key="frame" x="225" y="116" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="insulin_screen" translatesAutoresizingMaskIntoConstraints="NO" id="deD-fr-OIJ">
+                                <rect key="frame" x="150" y="322" width="300" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Hfh-rq-DdI"/>
+                                    <constraint firstAttribute="height" constant="180" id="U8b-NU-k0N"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="deD-fr-OIJ" firstAttribute="leading" secondItem="8rS-zS-3Eh" secondAttribute="leadingMargin" constant="134" id="6zg-BI-s78"/>
+                            <constraint firstItem="deD-fr-OIJ" firstAttribute="top" secondItem="6di-qy-4nV" secondAttribute="bottom" constant="-3" id="8Dh-OM-r3Z"/>
                             <constraint firstItem="6di-qy-4nV" firstAttribute="top" secondItem="Ond-Sr-zEj" secondAttribute="bottom" constant="8" symbolic="YES" id="d5g-Fa-Ea2"/>
-                            <constraint firstAttribute="centerY" secondItem="6di-qy-4nV" secondAttribute="centerY" id="fHi-vK-wM3"/>
+                            <constraint firstAttribute="centerY" secondItem="6di-qy-4nV" secondAttribute="centerY" constant="40.5" id="fHi-vK-wM3"/>
                             <constraint firstAttribute="centerX" secondItem="6di-qy-4nV" secondAttribute="centerX" id="kOX-Be-FgR"/>
                             <constraint firstAttribute="centerX" secondItem="Ond-Sr-zEj" secondAttribute="centerX" id="l6w-8b-15k"/>
+                            <constraint firstAttribute="centerX" secondItem="deD-fr-OIJ" secondAttribute="centerX" id="rBL-f9-i42"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6zg-BI-s78"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Glucose" image="blood_icon" id="Ca1-uC-EpJ"/>
+                    <tabBarItem key="tabBarItem" title="History" image="blood_icon" id="Ca1-uC-EpJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Zby-FJ-9HD"/>
             </objects>
             <point key="canvasLocation" x="-2382" y="-3189"/>
-        </scene>
-        <!--Insulin-->
-        <scene sceneID="Kjg-Ax-whS">
-            <objects>
-                <viewController id="vSI-3V-VNA" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pfy-k8-qov"/>
-                        <viewControllerLayoutGuide type="bottom" id="pnh-6a-hEa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yy0-Tj-zFj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="insulin_screen" translatesAutoresizingMaskIntoConstraints="NO" id="A5m-ZZ-ndB">
-                                <rect key="frame" x="150" y="186" width="300" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="0yM-Kb-FiD"/>
-                                    <constraint firstAttribute="height" constant="180" id="mAm-FX-Ha4"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDK-3w-FcC">
-                                <rect key="frame" x="225" y="157" width="151" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="cDK-3w-FcC" secondAttribute="centerX" id="2Ow-O0-NlP"/>
-                            <constraint firstAttribute="centerX" secondItem="A5m-ZZ-ndB" secondAttribute="centerX" id="AeA-sw-pPt"/>
-                            <constraint firstAttribute="centerY" secondItem="A5m-ZZ-ndB" secondAttribute="centerY" id="qiz-bn-FPl"/>
-                            <constraint firstItem="A5m-ZZ-ndB" firstAttribute="top" secondItem="cDK-3w-FcC" secondAttribute="bottom" constant="8" symbolic="YES" id="yxz-3o-MK2"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Insulin" image="insulin_icon" id="rE9-2m-WIc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2382" y="-2390"/>
         </scene>
         <!--Doctor Comm-->
         <scene sceneID="Ozd-AP-DC8">
@@ -994,10 +985,9 @@ Keep up the good work!
         <image name="blue_dot" width="12" height="12"/>
         <image name="doc_comm_icon" width="25" height="25"/>
         <image name="food_icon" width="25" height="25"/>
-        <image name="glucose_breakdown" width="749" height="449"/>
+        <image name="glucose_breakdown" width="750" height="450"/>
         <image name="glucose_screen" width="754" height="453"/>
         <image name="home_icon" width="25" height="25"/>
-        <image name="insulin_icon" width="25" height="25"/>
         <image name="insulin_screen" width="751" height="451"/>
         <image name="new_bolus_graph" width="450" height="230"/>
         <image name="ola_logo" width="333" height="206"/>
