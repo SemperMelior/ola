@@ -800,17 +800,14 @@ ETA: 6 MIN</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="glucose_screen" translatesAutoresizingMaskIntoConstraints="NO" id="6di-qy-4nV">
-                                <rect key="frame" x="150" y="210" width="300" height="180"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glucose" translatesAutoresizingMaskIntoConstraints="NO" id="rZV-HI-yqy">
+                                <rect key="frame" x="41" y="88" width="519" height="224"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="C9k-KD-cDr"/>
-                                    <constraint firstAttribute="width" constant="300" id="YL3-h4-4Oz"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="h5I-SV-Wen"/>
-                                    <constraint firstAttribute="height" constant="180" id="yFs-NS-B1m"/>
+                                    <constraint firstAttribute="height" constant="224" id="3nT-VN-EsC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-Sr-zEj">
-                                <rect key="frame" x="225" y="182" width="150.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-qd-UbG">
+                                <rect key="frame" x="249" y="408" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -819,10 +816,11 @@ ETA: 6 MIN</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6di-qy-4nV" firstAttribute="top" secondItem="Ond-Sr-zEj" secondAttribute="bottom" constant="8" symbolic="YES" id="d5g-Fa-Ea2"/>
-                            <constraint firstAttribute="centerY" secondItem="6di-qy-4nV" secondAttribute="centerY" id="fHi-vK-wM3"/>
-                            <constraint firstAttribute="centerX" secondItem="6di-qy-4nV" secondAttribute="centerX" id="kOX-Be-FgR"/>
-                            <constraint firstAttribute="centerX" secondItem="Ond-Sr-zEj" secondAttribute="centerX" id="l6w-8b-15k"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="leading" secondItem="8rS-zS-3Eh" secondAttribute="leadingMargin" constant="25" id="64E-rh-3XD"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="centerX" secondItem="8rS-zS-3Eh" secondAttribute="centerX" id="900-9a-R3S"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="top" secondItem="yl9-iL-aNP" secondAttribute="bottom" constant="68" id="Ch1-s4-V6c"/>
+                            <constraint firstItem="93I-fm-DTc" firstAttribute="top" secondItem="CGh-qd-UbG" secondAttribute="bottom" constant="122" id="U5s-b9-vl5"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="centerX" secondItem="CGh-qd-UbG" secondAttribute="centerX" id="z88-Hd-7SM"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
@@ -847,15 +845,14 @@ ETA: 6 MIN</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="insulin_screen" translatesAutoresizingMaskIntoConstraints="NO" id="A5m-ZZ-ndB">
-                                <rect key="frame" x="150" y="186" width="300" height="180"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="insulin" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-ET-3pq">
+                                <rect key="frame" x="46" y="73" width="510" height="231"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="0yM-Kb-FiD"/>
-                                    <constraint firstAttribute="height" constant="180" id="mAm-FX-Ha4"/>
+                                    <constraint firstAttribute="height" constant="196" id="M0y-b4-apk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDK-3w-FcC">
-                                <rect key="frame" x="225" y="157" width="151" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW0-4Y-nvI">
+                                <rect key="frame" x="249" y="410" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -863,17 +860,18 @@ ETA: 6 MIN</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="cDK-3w-FcC" secondAttribute="centerX" id="2Ow-O0-NlP"/>
-                            <constraint firstAttribute="centerX" secondItem="A5m-ZZ-ndB" secondAttribute="centerX" id="AeA-sw-pPt"/>
-                            <constraint firstAttribute="centerY" secondItem="A5m-ZZ-ndB" secondAttribute="centerY" id="qiz-bn-FPl"/>
-                            <constraint firstItem="A5m-ZZ-ndB" firstAttribute="top" secondItem="cDK-3w-FcC" secondAttribute="bottom" constant="8" symbolic="YES" id="yxz-3o-MK2"/>
+                            <constraint firstItem="pnh-6a-hEa" firstAttribute="top" secondItem="CW0-4Y-nvI" secondAttribute="bottom" constant="120" id="FGz-cL-vPt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iwb-ET-3pq" secondAttribute="trailing" constant="28" id="Jbf-8M-XJx"/>
+                            <constraint firstItem="iwb-ET-3pq" firstAttribute="leading" secondItem="yy0-Tj-zFj" secondAttribute="leadingMargin" constant="30" id="M31-8l-B0D"/>
+                            <constraint firstItem="iwb-ET-3pq" firstAttribute="top" secondItem="pfy-k8-qov" secondAttribute="bottom" constant="70" id="neg-QO-eKW"/>
+                            <constraint firstItem="CW0-4Y-nvI" firstAttribute="centerX" secondItem="yy0-Tj-zFj" secondAttribute="centerX" id="vuh-b4-FB9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="clock_icon" id="rE9-2m-WIc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2382" y="-2390"/>
+            <point key="canvasLocation" x="-2327" y="-2474"/>
         </scene>
         <!--Doctor Comm-->
         <scene sceneID="Ozd-AP-DC8">
@@ -994,10 +992,11 @@ Keep up the good work!
         <image name="clock_icon" width="25" height="25"/>
         <image name="doc_comm_icon" width="25" height="25"/>
         <image name="food_icon" width="25" height="25"/>
-        <image name="glucose_breakdown" width="750" height="450"/>
-        <image name="glucose_screen" width="754" height="453"/>
+        <image name="glucose" width="682" height="524"/>
+        <image name="glucose_breakdown" width="749" height="449"/>
         <image name="home_icon" width="25" height="25"/>
-        <image name="insulin_screen" width="751" height="451"/>
+        <image name="insulin" width="752" height="453"/>
+        <image name="insulin_icon" width="25" height="25"/>
         <image name="new_bolus_graph" width="450" height="230"/>
         <image name="ola_logo" width="333" height="206"/>
         <image name="std_wave" width="120" height="70"/>
