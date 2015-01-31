@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setSelectedIndex:1];
+    [self setSelectedIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {

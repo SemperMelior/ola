@@ -416,6 +416,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)tapNewItemFooterButton:(id)sender {
+    [self newFoodItemTap:sender];
+}
+
 - (IBAction)newFoodItemTap:(UIBarButtonItem *)sender {
 
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Input method"
@@ -424,7 +428,6 @@
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles: nil];
     
-    [alert addButtonWithTitle:@"Food camera"];
     [alert addButtonWithTitle:@"Carb count"];
     [alert addButtonWithTitle:@"Food name"];
     alert.tag = 0;
