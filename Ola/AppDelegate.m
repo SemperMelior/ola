@@ -13,12 +13,31 @@
 @end
 
 @implementation AppDelegate
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x54afe8)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor],
+      NSForegroundColorAttributeName,
+      [UIColor whiteColor],
+      NSForegroundColorAttributeName,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+      NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"Arial-Bold" size:0.0],
+      NSFontAttributeName,
+      nil]];
+    
+    [application setStatusBarHidden:NO];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Override point for customization after application launch.
     return YES;
 }
