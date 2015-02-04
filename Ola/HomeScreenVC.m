@@ -60,16 +60,16 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)chartTypeSelector:(UISegmentedControl *)sender {
-    switch(sender.selectedSegmentIndex)
-    {
-        case 0:
-            self.chartImageView.image = [UIImage imageNamed:@"glucose_breakdown"];
-            break;
-        case 1:
-            self.chartImageView.image = [UIImage imageNamed:@"glucose_level"];
-            break;
-    }
-}
+//- (IBAction)chartTypeSelector:(UISegmentedControl *)sender {
+//    switch(sender.selectedSegmentIndex)
+//    {
+//        case 0:
+//            self.chartImageView.image = [UIImage imageNamed:@"glucose_breakdown"];
+//            break;
+//        case 1:
+//            self.chartImageView.image = [UIImage imageNamed:@"glucose_level"];
+//            break;
+//    }
+//}
 
 @end

@@ -108,8 +108,6 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.tag = 0;
     self.fooditems = [[NSMutableArray alloc] init];
-    
-    
     self.foodNames = [[NSMutableArray alloc] init];
     
     [self addFoodName:@"Apple pie (1 slice)" andCarbCount:50];
@@ -207,7 +205,7 @@
         NSLog(@"You have clicked 0");
     }
     
-    if (buttonIndex == 1)
+    if (buttonIndex == -1)
     {
         NSLog(@"You have clicked food camera!");
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -219,7 +217,7 @@
         [self presentViewController:picker animated:YES completion:NULL];
     }
     
-    if (buttonIndex == 2)
+    if (buttonIndex == 1)
     {
         NSLog(@"You have clicked carb count!");
         
@@ -237,8 +235,6 @@
         [alert textFieldAtIndex:1].keyboardType = UIKeyboardTypeNumberPad;
         alert.tag = 1;
         
-        
-        
         /*
          UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Forgot Password" message:@"Please enter the email ID associated with your Hngre account." delegate:self cancelButtonTitle:@"Here you go" otherButtonTitles:@"No, thanks", nil];
          alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
@@ -250,7 +246,7 @@
         [alert show];
     }
     
-    if (buttonIndex == 3)
+    if (buttonIndex == 2)
     {
         NSLog(@"You have clicked food name!");
 
@@ -417,12 +413,19 @@
 }
 */
 - (IBAction)tapNewItemFooterButton:(id)sender {
-    [self newFoodItemTap:sender];
+    //[self newFoodItemTap:sender];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    [self presentViewController:nc animated:YES completion:NULL];
+    
 }
 
 - (IBAction)newFoodItemTap:(UIBarButtonItem *)sender {
 
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Input method"
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    [self presentViewController:nc animated:YES completion:NULL];
+    /*UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Input method"
                                                      message:@""
                                                     delegate:self
                                            cancelButtonTitle:@"Cancel"
@@ -431,7 +434,7 @@
     [alert addButtonWithTitle:@"Carb count"];
     [alert addButtonWithTitle:@"Food name"];
     alert.tag = 0;
-    [alert show];
+    [alert show];*/
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
