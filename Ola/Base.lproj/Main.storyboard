@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -683,24 +683,23 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glucose_breakdown" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-Wz-RmI">
-                                <rect key="frame" x="150" y="269" width="300" height="180"/>
+                                <rect key="frame" x="150" y="-28" width="300" height="450"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="8sS-sm-Iag"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glucose History (past 7 days)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-ix-eH1">
-                                <rect key="frame" x="188" y="172" width="225" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ola_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="ahZ-wr-S0L">
+                                <rect key="frame" x="266" y="29" width="69" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TzI-bR-V48"/>
+                                    <constraint firstAttribute="height" constant="35" id="cl0-9q-ilE"/>
+                                    <constraint firstAttribute="width" constant="69" id="fyk-UM-35c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-oq-0hV">
-                                <rect key="frame" x="218" y="233" width="165" height="29"/>
+                            </imageView>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-um-JSp">
+                                <rect key="frame" x="113" y="304" width="375" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="obF-Og-rtC"/>
+                                    <constraint firstAttribute="height" constant="70" id="kIW-rd-PN1"/>
+                                    <constraint firstAttribute="width" constant="375" id="qHa-5m-v1y"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Breakdown"/>
@@ -756,8 +755,9 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                         <action selector="triggerLockScreen:" destination="CcJ-mn-BRm" id="f2N-2m-fit"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Mu2-fJ-o5I"/>
             </objects>
-            <point key="canvasLocation" x="-3198" y="-584"/>
+            <point key="canvasLocation" x="-3274" y="-540"/>
         </scene>
         <!--EmergencyVC-->
         <scene sceneID="Jl2-SY-ITz">
@@ -1130,6 +1130,7 @@ Keep up the good work!
         </scene>
     </scenes>
     <resources>
+        <image name="ButtonBlue" width="320" height="80"/>
         <image name="ButtonDarkBlue" width="320" height="80"/>
         <image name="ButtonOrange" width="320" height="80"/>
         <image name="ButtonRed" width="320" height="80"/>
