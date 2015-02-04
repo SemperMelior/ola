@@ -872,7 +872,9 @@ ETA: 6 MIN</string>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="clock_icon" id="Ca1-uC-EpJ"/>
-                    <navigationItem key="navigationItem" title="History" id="evR-gC-hIu"/>
+                    <navigationItem key="navigationItem" title="History" id="evR-gC-hIu">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="i3T-Yr-XNB"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Zby-FJ-9HD"/>
