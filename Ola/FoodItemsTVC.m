@@ -108,8 +108,6 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.tag = 0;
     self.fooditems = [[NSMutableArray alloc] init];
-    
-    
     self.foodNames = [[NSMutableArray alloc] init];
     
     [self addFoodName:@"Apple pie (1 slice)" andCarbCount:50];

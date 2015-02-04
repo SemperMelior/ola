@@ -389,7 +389,7 @@
                                         <string key="content">From: Dr. Holmes
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -400,40 +400,50 @@ I've noticed that you experienced several low blood sugar events during Monday m
 
 I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Monday mornings.</string>
                                         <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-5R-hHb">
-                                <rect key="frame" x="271" y="431" width="58" height="30"/>
-                                <state key="normal" title="Approve">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="approvebutton:" destination="g5h-Hc-ca7" eventType="touchUpInside" id="oHV-0Z-EzU"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-2M-bty">
-                                <rect key="frame" x="172" y="286" width="257" height="132"/>
+                                <rect key="frame" x="172" y="273" width="257" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="257" id="Gko-CI-2wD"/>
                                     <constraint firstAttribute="height" constant="132" id="agH-Y2-UuL"/>
                                 </constraints>
                             </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonDarkBlue" translatesAutoresizingMaskIntoConstraints="NO" id="VDI-Vl-LyK">
+                                <rect key="frame" x="220" y="422" width="160" height="40"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="N5D-KN-VP6"/>
+                                    <constraint firstAttribute="width" constant="160" id="zDJ-Mf-xU9"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8fh-Nl-zgv" appends="YES" id="11M-Lh-2gV"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obF-5L-J8n">
+                                <rect key="frame" x="268" y="431" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Ue-5R-hHb" firstAttribute="top" secondItem="KTP-2M-bty" secondAttribute="bottom" constant="13" id="4k0-34-FIs"/>
                             <constraint firstItem="gRh-Tx-pau" firstAttribute="leading" secondItem="j8g-DQ-qgW" secondAttribute="leading" constant="16" id="9xf-Lg-g2T"/>
                             <constraint firstItem="KTP-2M-bty" firstAttribute="centerX" secondItem="gRh-Tx-pau" secondAttribute="centerX" id="DCY-4h-FNx"/>
+                            <constraint firstItem="VDI-Vl-LyK" firstAttribute="centerY" secondItem="obF-5L-J8n" secondAttribute="centerY" constant="0.5" id="EAv-EP-Krt"/>
                             <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="EdD-R9-edj"/>
-                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Eep-7w-oAL"/>
                             <constraint firstItem="gRh-Tx-pau" firstAttribute="top" secondItem="j8g-DQ-qgW" secondAttribute="top" id="TtB-d7-HF6"/>
-                            <constraint firstItem="Iqz-4d-NsE" firstAttribute="top" secondItem="6Ue-5R-hHb" secondAttribute="bottom" constant="31" id="oaT-yV-fH8"/>
+                            <constraint firstAttribute="centerX" secondItem="VDI-Vl-LyK" secondAttribute="centerX" id="dMJ-aD-Puy"/>
+                            <constraint firstItem="Iqz-4d-NsE" firstAttribute="top" secondItem="VDI-Vl-LyK" secondAttribute="bottom" constant="30" id="l4S-uJ-XuC"/>
+                            <constraint firstItem="VDI-Vl-LyK" firstAttribute="top" secondItem="KTP-2M-bty" secondAttribute="bottom" constant="17" id="nbm-Z5-b6m"/>
                             <constraint firstAttribute="bottom" secondItem="gRh-Tx-pau" secondAttribute="bottom" constant="274" id="qKX-bu-qIS"/>
+                            <constraint firstItem="VDI-Vl-LyK" firstAttribute="centerX" secondItem="obF-5L-J8n" secondAttribute="centerX" constant="-0.5" id="yQ3-1G-naM"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -445,15 +455,17 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="approvebutton" destination="6Ue-5R-hHb" id="rbY-Vf-uqs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vbm-VT-rfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fAL-Bp-O5j">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <tapGestureRecognizer id="8fh-Nl-zgv">
+                    <connections>
+                        <action selector="approveButton:" destination="g5h-Hc-ca7" id="vqr-h7-83f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-347" y="-1612"/>
         </scene>
@@ -714,29 +726,18 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
-                                <rect key="frame" x="25" y="312" width="550" height="76"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="UwQ-Mz-CDJ"/>
-                                </constraints>
-                                <string key="text">
-PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-SP-m46">
-                                <rect key="frame" x="25" y="259" width="550" height="68"/>
+                                <rect key="frame" x="25" y="236" width="550" height="68"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="hxu-vo-VNH"/>
                                 </constraints>
                                 <string key="text">PARAMEDICS ARE ON THE WAY
 ETA: 6 MIN</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonRed" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-iQ-ouK">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonRed" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-iQ-ouK">
                                 <rect key="frame" x="170" y="396" width="260" height="50"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -753,7 +754,7 @@ ETA: 6 MIN</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonOrange" translatesAutoresizingMaskIntoConstraints="NO" id="b18-Tl-4kT">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonOrange" translatesAutoresizingMaskIntoConstraints="NO" id="b18-Tl-4kT">
                                 <rect key="frame" x="170" y="454" width="260" height="50"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -774,13 +775,24 @@ ETA: 6 MIN</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
+                                <rect key="frame" x="25" y="291" width="550" height="76"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="UwQ-Mz-CDJ"/>
+                                </constraints>
+                                <string key="text">
+PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="48" id="0sb-bs-tmi"/>
                             <constraint firstAttribute="centerX" secondItem="8EL-SP-m46" secondAttribute="centerX" id="5Gb-Pj-NCD"/>
-                            <constraint firstItem="Eia-iQ-ouK" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="8" id="CJB-gq-JyB"/>
+                            <constraint firstItem="Eia-iQ-ouK" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="29" id="CJB-gq-JyB"/>
                             <constraint firstItem="Tfc-go-gvm" firstAttribute="top" secondItem="qqQ-ju-DXk" secondAttribute="bottom" constant="8" symbolic="YES" id="CUe-mN-unR"/>
                             <constraint firstAttribute="centerX" secondItem="RTZ-ms-NGe" secondAttribute="centerX" id="Dh6-pg-rl4"/>
                             <constraint firstItem="Eia-iQ-ouK" firstAttribute="centerY" secondItem="Jvp-yR-Ykh" secondAttribute="centerY" constant="0.5" id="Eb3-d4-1AS"/>
@@ -788,7 +800,7 @@ ETA: 6 MIN</string>
                             <constraint firstAttribute="centerX" secondItem="Tfc-go-gvm" secondAttribute="centerX" id="KAL-9l-AVV"/>
                             <constraint firstItem="Eia-iQ-ouK" firstAttribute="centerX" secondItem="Jvp-yR-Ykh" secondAttribute="centerX" constant="-0.5" id="Ovx-vk-sIt"/>
                             <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="9" id="RQh-GU-X5z"/>
-                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="61" id="VeO-M3-MiE"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="40" id="VeO-M3-MiE"/>
                             <constraint firstItem="b18-Tl-4kT" firstAttribute="centerX" secondItem="EeR-sE-ELa" secondAttribute="centerX" constant="-0.5" id="eCc-hc-cgN"/>
                             <constraint firstItem="b18-Tl-4kT" firstAttribute="top" secondItem="Eia-iQ-ouK" secondAttribute="bottom" constant="8" id="hfF-yn-IeD"/>
                             <constraint firstAttribute="centerX" secondItem="b18-Tl-4kT" secondAttribute="centerX" id="j4i-ky-ObE"/>
@@ -797,8 +809,8 @@ ETA: 6 MIN</string>
                             <constraint firstItem="8EL-SP-m46" firstAttribute="leading" secondItem="z0t-Eh-iPX" secondAttribute="leading" id="nAj-gC-MFs"/>
                             <constraint firstAttribute="centerX" secondItem="qqQ-ju-DXk" secondAttribute="centerX" id="pY0-qW-e2L"/>
                             <constraint firstItem="b18-Tl-4kT" firstAttribute="centerY" secondItem="EeR-sE-ELa" secondAttribute="centerY" constant="0.5" id="rOe-qM-q21"/>
-                            <constraint firstItem="8EL-SP-m46" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="135" id="vF6-y4-Zsn"/>
-                            <constraint firstItem="8EL-SP-m46" firstAttribute="bottom" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="76" id="wL4-3M-a3G"/>
+                            <constraint firstItem="8EL-SP-m46" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="112" id="vF6-y4-Zsn"/>
+                            <constraint firstItem="8EL-SP-m46" firstAttribute="bottom" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="53" id="wL4-3M-a3G"/>
                             <constraint firstItem="8EL-SP-m46" firstAttribute="leading" secondItem="RTZ-ms-NGe" secondAttribute="leading" id="yn4-S4-FfD"/>
                             <constraint firstItem="Eia-iQ-ouK" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="154" id="zEv-TC-2r7"/>
                             <constraint firstAttribute="centerX" secondItem="z0t-Eh-iPX" secondAttribute="centerX" id="zKb-yR-VXc"/>
@@ -827,7 +839,7 @@ ETA: 6 MIN</string>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="Np0-Up-W09">
                     <connections>
-                        <action selector="call_emergency_contact:" destination="jge-qH-d0i" id="7Bt-Cv-i3y"/>
+                        <action selector="call_emergency_contact:" destination="jge-qH-d0i" id="rkZ-og-Rvt"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1039,6 +1051,7 @@ Keep up the good work!
         </scene>
     </scenes>
     <resources>
+        <image name="ButtonDarkBlue" width="320" height="80"/>
         <image name="ButtonOrange" width="320" height="80"/>
         <image name="ButtonRed" width="320" height="80"/>
         <image name="blue_dot" width="12" height="12"/>

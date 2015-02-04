@@ -57,6 +57,7 @@
         [self handleCallEmergencyContactAlertView:alertView withButtonIndex:buttonIndex];
 }
 
+
 - (IBAction)call_911_button_press:(id)sender {
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Dial 911?"
                                                      message:@""

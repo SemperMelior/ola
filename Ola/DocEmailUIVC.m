@@ -35,15 +35,15 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)approvebutton:(UIButton *)sender {
-    
+
+- (IBAction)approveButton:(id)sender {
     NSString *msg = @"";
     
     if([self.approvebutton.currentTitle isEqualToString:@"Approve"])
     {
         msg = @"Are you sure you want to implement this change?";
     } else {
-         msg = @"Are you sure you want to undo this change?";
+        msg = @"Are you sure you want to undo this change?";
     }
     
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:msg message:@""
