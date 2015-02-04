@@ -24,17 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
 - (void)handleCall911AlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0)
@@ -68,8 +57,7 @@
         [self handleCallEmergencyContactAlertView:alertView withButtonIndex:buttonIndex];
 }
 
-
-- (IBAction)call_911:(UIButton *)sender {
+- (IBAction)call_911_button_press:(id)sender {
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Dial 911?"
                                                      message:@""
                                                     delegate:self
@@ -81,6 +69,7 @@
     
     [alert show];
 }
+
 - (IBAction)call_emergency_contact:(id)sender {
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Dial Emergency Contact?"
                                                      message:@"650.646.5409"
