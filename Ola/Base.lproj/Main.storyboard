@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -712,13 +711,6 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                     <action selector="chartTypeSelector:" destination="CcJ-mn-BRm" eventType="valueChanged" id="CVw-4n-4oA"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkI-0N-ezk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
-                                <color key="backgroundColor" red="0.32941176470588235" green="0.68627450980392157" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ola_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="ahZ-wr-S0L">
                                 <rect key="frame" x="266" y="48" width="69" height="35"/>
                                 <constraints>
@@ -726,23 +718,28 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                     <constraint firstAttribute="width" constant="69" id="fyk-UM-35c"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-01" translatesAutoresizingMaskIntoConstraints="NO" id="CBe-hK-nTS">
+                                <rect key="frame" x="140" y="0.0" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1RQ-cQ-LaD"/>
+                                    <constraint firstAttribute="height" constant="40" id="Aon-36-2p9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="CBe-hK-nTS" secondAttribute="centerX" id="2UC-dG-lSN"/>
                             <constraint firstItem="H0T-Wz-RmI" firstAttribute="top" secondItem="UjW-oq-0hV" secondAttribute="bottom" constant="8" symbolic="YES" id="DRI-iE-pSg"/>
                             <constraint firstItem="u8K-Hg-RQh" firstAttribute="top" secondItem="H0T-Wz-RmI" secondAttribute="bottom" constant="102" id="KTR-5J-G3C"/>
-                            <constraint firstItem="MkI-0N-ezk" firstAttribute="top" secondItem="ozu-KF-WVX" secondAttribute="top" id="OzT-dc-u31"/>
                             <constraint firstAttribute="centerX" secondItem="H0T-Wz-RmI" secondAttribute="centerX" id="XSE-4l-ufm"/>
-                            <constraint firstItem="mqo-ix-eH1" firstAttribute="top" secondItem="MkI-0N-ezk" secondAttribute="bottom" constant="79" id="are-1S-TVA"/>
-                            <constraint firstItem="MkI-0N-ezk" firstAttribute="centerX" secondItem="ahZ-wr-S0L" secondAttribute="centerX" id="bbr-bS-nkT"/>
                             <constraint firstItem="ahZ-wr-S0L" firstAttribute="top" secondItem="gAY-Yb-5JK" secondAttribute="bottom" constant="28" id="cSq-E6-lyS"/>
                             <constraint firstAttribute="centerX" secondItem="mqo-ix-eH1" secondAttribute="centerX" id="eOK-lX-yyJ"/>
                             <constraint firstItem="mqo-ix-eH1" firstAttribute="top" secondItem="ahZ-wr-S0L" secondAttribute="bottom" constant="89" id="hqv-Am-9Q6"/>
                             <constraint firstItem="UjW-oq-0hV" firstAttribute="top" secondItem="mqo-ix-eH1" secondAttribute="bottom" constant="40" id="kZe-cd-A78"/>
-                            <constraint firstItem="MkI-0N-ezk" firstAttribute="leading" secondItem="ozu-KF-WVX" secondAttribute="leading" id="lAo-ja-d8N"/>
                             <constraint firstAttribute="centerX" secondItem="UjW-oq-0hV" secondAttribute="centerX" id="mYn-0v-XCg"/>
                             <constraint firstAttribute="centerX" secondItem="ahZ-wr-S0L" secondAttribute="centerX" id="md8-t1-wKW"/>
+                            <constraint firstItem="CBe-hK-nTS" firstAttribute="top" secondItem="gAY-Yb-5JK" secondAttribute="bottom" constant="-20" id="rXE-Lw-a0o"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="J3y-Oj-mcH" appends="YES" id="EcA-SX-xhN"/>
@@ -1142,6 +1139,7 @@ Keep up the good work!
         <image name="food_icon" width="25" height="25"/>
         <image name="glucose_breakdown" width="750" height="450"/>
         <image name="glucose_screen" width="754" height="453"/>
+        <image name="header-01" width="1250" height="159"/>
         <image name="home_icon" width="25" height="25"/>
         <image name="insulin_screen" width="751" height="451"/>
         <image name="new_bolus_graph" width="450" height="230"/>
