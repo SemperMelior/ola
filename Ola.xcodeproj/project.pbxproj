@@ -13,7 +13,6 @@
 		4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80441A1C0C7E001C82B6 /* FirstViewController.m */; };
 		4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */; };
 		4A0A804B1A1C0C7E001C82B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A80491A1C0C7E001C82B6 /* Main.storyboard */; };
-		4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */; };
 		4A0A805C1A1C0C7F001C82B6 /* OlaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */; };
 		4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DD21A22A8AE00CDBAFB /* FoodItem.m */; };
 		4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */; };
@@ -289,7 +288,6 @@
 				5AE890791A82AD0A0046773F /* convertcsv.json in Resources */,
 				4AC8B4D21A2455C20064398E /* Images.xcassets in Resources */,
 				4A0A804B1A1C0C7E001C82B6 /* Main.storyboard in Resources */,
-				4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +447,7 @@
 		4A0A80601A1C0C7F001C82B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -464,6 +463,7 @@
 		4A0A80611A1C0C7F001C82B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
