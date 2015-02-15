@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *foodNameTableView;
 @property (strong, nonatomic) CustomIOS7AlertView *foodNameAlertView;
 @property (strong, nonatomic) NSMutableArray *foodNames;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *calculateButton;
 
 @end
 
@@ -73,6 +74,8 @@
 -(void) removeAllFoodItems {
     [self.fooditems removeAllObjects];
     [self.tableView reloadData];
+    self.calculateButton.title = @"";
+    [self.calculateButton setEnabled:NO];
 }
 
 - (void) addFoodItem:(NSString *)name andCarbCount:(NSUInteger)carbCount
@@ -82,6 +85,8 @@
     [self.fooditems addObject:fi];
     
     [self.tableView reloadData];
+    self.calculateButton.title = @"Calculate";
+    [self.calculateButton setEnabled:YES];
     //[self updateTitle];
 }
 
@@ -125,9 +130,14 @@
     self.foodNameTableView.tag = 1;
     [self.foodNameTableView setDelegate:self];
     [self.foodNameTableView setDataSource:self];
-    //[self.foodNameTableView reloadData];
-    //[self updateTitle];
     
+    if([self.fooditems count] < 1) {
+        self.calculateButton.title = @"";
+        [self.calculateButton setEnabled:NO];
+    } else {
+        self.calculateButton.title = @"Calculate";
+        [self.calculateButton setEnabled:YES];
+    }
 }
 
 
@@ -160,7 +170,6 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
     
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(chosenImage)];
@@ -274,31 +283,23 @@
 
 - (void)handleCarbCountInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
-    {
+    if (buttonIndex == 0) {
         NSLog(@"You have clicked 0");
     }
-    
-    if (buttonIndex == 1)
-    {
+    if (buttonIndex == 1) {
         NSLog(@"You have clicked add!");
         NSString *name = [alertView textFieldAtIndex:0].text;
         NSUInteger carbCount = [[alertView textFieldAtIndex:1].text intValue];
         [self addFoodItem:name andCarbCount:(carbCount)];
-        
     }
-
 }
 
 - (void)handleFoodNameInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
-    {
+    if (buttonIndex == 0) {
         NSLog(@"You have clicked 0");
     }
-    
-    if (buttonIndex == 1)
-    {
+    if (buttonIndex == 1) {
         NSLog(@"You have clicked search!");
         self.foodNameAlertView = [[CustomIOS7AlertView alloc] init];
         [self.foodNameAlertView setContainerView:self.foodNameTableView];
@@ -324,8 +325,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if(tableView.tag == 0)
-    {
+    if(tableView.tag == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Item Cell" forIndexPath:indexPath];
     
         FoodItem *fi = [self foodItemAtIndex:indexPath.row];
@@ -336,8 +336,7 @@
         return cell;
     }
     
-    if(tableView.tag == 1)
-    {
+    if(tableView.tag == 1) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Name Cell" forIndexPath:indexPath];
         
         FoodItem *fi = [self foodNameAtIndex:indexPath.row];
@@ -350,8 +349,6 @@
     
     return NULL;
 }
-
-
 
 
 
@@ -375,6 +372,13 @@
             // Delete the row from the data source
             [self removeFoodItemAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            if([self.fooditems count] < 1) {
+                self.calculateButton.title = @"";
+                [self.calculateButton setEnabled:NO];
+            } else {
+                self.calculateButton.title = @"Calculate";
+                [self.calculateButton setEnabled:YES];
+            }
         } else if (editingStyle == UITableViewCellEditingStyleInsert) {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -487,7 +491,6 @@
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     return (([string isEqualToString:filtered])&&(newLength <= 3));
 }
-
 
 
 @end

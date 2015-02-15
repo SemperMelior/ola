@@ -153,6 +153,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="calculateButton" destination="bko-y1-6Jc" id="uDj-SZ-JtQ"/>
                         <outlet property="foodNameTableView" destination="xZS-an-8EN" id="fLI-8j-DHw"/>
                     </connections>
                 </tableViewController>
