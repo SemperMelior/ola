@@ -29,6 +29,7 @@
 		4ADB01E71A1FCE1600E55520 /* FoodItemsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */; };
 		4AFF336A1A1F2A260024704A /* DocEmail2UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF33691A1F2A260024704A /* DocEmail2UIVC.m */; };
 		4AFF336D1A1F2A410024704A /* DocEmail3UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF336C1A1F2A410024704A /* DocEmail3UIVC.m */; };
+		5AAB87461A91022F00130169 /* SearchNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB87451A91022F00130169 /* SearchNavigationController.m */; };
 		5AE890771A82A19F0046773F /* AddFoodTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890761A82A19F0046773F /* AddFoodTVC.m */; };
 		5AE890791A82AD0A0046773F /* convertcsv.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AE890781A82AD0A0046773F /* convertcsv.json */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,8 @@
 		4AFF33691A1F2A260024704A /* DocEmail2UIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocEmail2UIVC.m; sourceTree = "<group>"; };
 		4AFF336B1A1F2A410024704A /* DocEmail3UIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocEmail3UIVC.h; sourceTree = "<group>"; };
 		4AFF336C1A1F2A410024704A /* DocEmail3UIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocEmail3UIVC.m; sourceTree = "<group>"; };
+		5AAB87441A91022F00130169 /* SearchNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNavigationController.h; sourceTree = "<group>"; };
+		5AAB87451A91022F00130169 /* SearchNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNavigationController.m; sourceTree = "<group>"; };
 		5AE890751A82A19F0046773F /* AddFoodTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodTVC.h; sourceTree = "<group>"; };
 		5AE890761A82A19F0046773F /* AddFoodTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodTVC.m; sourceTree = "<group>"; };
 		5AE890781A82AD0A0046773F /* convertcsv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = convertcsv.json; sourceTree = "<group>"; };
@@ -148,14 +151,16 @@
 				4A881F991A2A9E020021D691 /* EmergencyVC.h */,
 				4A881F9A1A2A9E020021D691 /* EmergencyVC.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
+				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
+				4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */,
+				5AAB87441A91022F00130169 /* SearchNavigationController.h */,
+				5AAB87451A91022F00130169 /* SearchNavigationController.m */,
 				5AE890751A82A19F0046773F /* AddFoodTVC.h */,
 				5AE890761A82A19F0046773F /* AddFoodTVC.m */,
 				4A881F931A2A992B0021D691 /* OlaTBC.h */,
 				4A881F941A2A992B0021D691 /* OlaTBC.m */,
 				4AD222611A26ABA4008AEB36 /* HomeScreenVC.h */,
 				4AD222621A26ABA4008AEB36 /* HomeScreenVC.m */,
-				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
-				4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */,
 				4AFF336B1A1F2A410024704A /* DocEmail3UIVC.h */,
 				4AFF336C1A1F2A410024704A /* DocEmail3UIVC.m */,
 				4AFF33681A1F2A260024704A /* DocEmail2UIVC.h */,
@@ -308,6 +313,7 @@
 				4A59969E1A23F67F0086FD35 /* CustomIOS7AlertView.m in Sources */,
 				4A881F9B1A2A9E020021D691 /* EmergencyVC.m in Sources */,
 				4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */,
+				5AAB87461A91022F00130169 /* SearchNavigationController.m in Sources */,
 				4AD222631A26ABA4008AEB36 /* HomeScreenVC.m in Sources */,
 				4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */,
 				4A881F951A2A992B0021D691 /* OlaTBC.m in Sources */,

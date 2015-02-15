@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FoodItem.h"
+#import "SearchNavigationController.h"
 
 @interface FoodItemsTVC : UITableViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
-UITextFieldDelegate>
+UITextFieldDelegate, SearchNavigationControllerDelegate>
 
 @property (nonatomic, readonly) NSUInteger totalCarbs;
+@property (nonatomic) NSString *foodItemName;
 
 -(void)removeAllFoodItems;
+//-(void)sendDataToFoodItemsTVC:(NSArray *)array;
 
 @end

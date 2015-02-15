@@ -10,16 +10,15 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "CustomIOS7AlertView.h"
 #import "InsulinInjectionVC.h"
+#import "SearchNavigationController.h"
 
 @interface FoodItemsTVC ()
 
 @property (strong, nonatomic) NSMutableArray *fooditems;
 @property (weak, nonatomic) IBOutlet UITableView *foodNameTableView;
-
 @property (strong, nonatomic) CustomIOS7AlertView *foodNameAlertView;
-
-
 @property (strong, nonatomic) NSMutableArray *foodNames;
+
 @end
 
 @implementation FoodItemsTVC
@@ -29,14 +28,10 @@
 - (NSUInteger)totalCarbs
 {
     _totalCarbs = 0;
-    
-    for(int i = 0; i < [self numFoodItems]; i++)
-    {
+    for(int i = 0; i < [self numFoodItems]; i++) {
         FoodItem *fi = [self foodItemAtIndex:i];
-        
         _totalCarbs += fi.carbCount;
     }
-    
     return _totalCarbs;
 }
 
@@ -97,6 +92,17 @@
     [self.foodNames addObject:fi];
 }
 
+
+- (void)sendDataToFoodItemsTVC:(NSArray *)array
+{
+    NSString *name = (NSString *)array[0];
+    NSNumber *carbs = (NSNumber *)array[1];
+    NSUInteger numberOfCarbs = [carbs integerValue];
+    [self addFoodItem:name andCarbCount:numberOfCarbs];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -123,6 +129,7 @@
     //[self updateTitle];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -403,19 +410,12 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)tapNewItemFooterButton:(id)sender {
     //[self newFoodItemTap:sender];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    nc.delegate = self; // protocol listener
     [self presentViewController:nc animated:YES completion:NULL];
     
 }
@@ -423,18 +423,9 @@
 - (IBAction)newFoodItemTap:(UIBarButtonItem *)sender {
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    UINavigationController *nc = (SearchNavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    nc.delegate = self; // protocol listener
     [self presentViewController:nc animated:YES completion:NULL];
-    /*UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Input method"
-                                                     message:@""
-                                                    delegate:self
-                                           cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles: nil];
-    
-    [alert addButtonWithTitle:@"Carb count"];
-    [alert addButtonWithTitle:@"Food name"];
-    alert.tag = 0;
-    [alert show];*/
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
