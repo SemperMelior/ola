@@ -29,7 +29,7 @@ func - (left: Array<CGFloat>, right: Array<CGFloat>) -> Array<CGFloat> {
 class LineChart: UIControl {
     
     // default configuration
-    var gridVisible = true
+    var gridVisible = false
     var axesVisible = true
     var dotsVisible = true
     var labelsXVisible = false
