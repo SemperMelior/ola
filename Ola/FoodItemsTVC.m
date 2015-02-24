@@ -10,16 +10,16 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "CustomIOS7AlertView.h"
 #import "InsulinInjectionVC.h"
+#import "SearchNavigationController.h"
 
 @interface FoodItemsTVC ()
 
 @property (strong, nonatomic) NSMutableArray *fooditems;
 @property (weak, nonatomic) IBOutlet UITableView *foodNameTableView;
-
 @property (strong, nonatomic) CustomIOS7AlertView *foodNameAlertView;
-
-
 @property (strong, nonatomic) NSMutableArray *foodNames;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *calculateButton;
+
 @end
 
 @implementation FoodItemsTVC
@@ -29,14 +29,10 @@
 - (NSUInteger)totalCarbs
 {
     _totalCarbs = 0;
-    
-    for(int i = 0; i < [self numFoodItems]; i++)
-    {
+    for(int i = 0; i < [self numFoodItems]; i++) {
         FoodItem *fi = [self foodItemAtIndex:i];
-        
         _totalCarbs += fi.carbCount;
     }
-    
     return _totalCarbs;
 }
 
@@ -78,6 +74,8 @@
 -(void) removeAllFoodItems {
     [self.fooditems removeAllObjects];
     [self.tableView reloadData];
+    self.calculateButton.title = @"";
+    [self.calculateButton setEnabled:NO];
 }
 
 - (void) addFoodItem:(NSString *)name andCarbCount:(NSUInteger)carbCount
@@ -87,6 +85,8 @@
     [self.fooditems addObject:fi];
     
     [self.tableView reloadData];
+    self.calculateButton.title = @"Calculate";
+    [self.calculateButton setEnabled:YES];
     //[self updateTitle];
 }
 
@@ -96,6 +96,17 @@
     
     [self.foodNames addObject:fi];
 }
+
+
+- (void)sendDataToFoodItemsTVC:(NSArray *)array
+{
+    NSString *name = (NSString *)array[0];
+    NSNumber *carbs = (NSNumber *)array[1];
+    NSUInteger numberOfCarbs = [carbs integerValue];
+    [self addFoodItem:name andCarbCount:numberOfCarbs];
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -119,10 +130,16 @@
     self.foodNameTableView.tag = 1;
     [self.foodNameTableView setDelegate:self];
     [self.foodNameTableView setDataSource:self];
-    //[self.foodNameTableView reloadData];
-    //[self updateTitle];
     
+    if([self.fooditems count] < 1) {
+        self.calculateButton.title = @"";
+        [self.calculateButton setEnabled:NO];
+    } else {
+        self.calculateButton.title = @"Calculate";
+        [self.calculateButton setEnabled:YES];
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -153,7 +170,6 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
     
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(chosenImage)];
@@ -267,31 +283,23 @@
 
 - (void)handleCarbCountInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
-    {
+    if (buttonIndex == 0) {
         NSLog(@"You have clicked 0");
     }
-    
-    if (buttonIndex == 1)
-    {
+    if (buttonIndex == 1) {
         NSLog(@"You have clicked add!");
         NSString *name = [alertView textFieldAtIndex:0].text;
         NSUInteger carbCount = [[alertView textFieldAtIndex:1].text intValue];
         [self addFoodItem:name andCarbCount:(carbCount)];
-        
     }
-
 }
 
 - (void)handleFoodNameInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
-    {
+    if (buttonIndex == 0) {
         NSLog(@"You have clicked 0");
     }
-    
-    if (buttonIndex == 1)
-    {
+    if (buttonIndex == 1) {
         NSLog(@"You have clicked search!");
         self.foodNameAlertView = [[CustomIOS7AlertView alloc] init];
         [self.foodNameAlertView setContainerView:self.foodNameTableView];
@@ -317,8 +325,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if(tableView.tag == 0)
-    {
+    if(tableView.tag == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Item Cell" forIndexPath:indexPath];
     
         FoodItem *fi = [self foodItemAtIndex:indexPath.row];
@@ -329,8 +336,7 @@
         return cell;
     }
     
-    if(tableView.tag == 1)
-    {
+    if(tableView.tag == 1) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Name Cell" forIndexPath:indexPath];
         
         FoodItem *fi = [self foodNameAtIndex:indexPath.row];
@@ -343,8 +349,6 @@
     
     return NULL;
 }
-
-
 
 
 
@@ -368,6 +372,13 @@
             // Delete the row from the data source
             [self removeFoodItemAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            if([self.fooditems count] < 1) {
+                self.calculateButton.title = @"";
+                [self.calculateButton setEnabled:NO];
+            } else {
+                self.calculateButton.title = @"Calculate";
+                [self.calculateButton setEnabled:YES];
+            }
         } else if (editingStyle == UITableViewCellEditingStyleInsert) {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -403,19 +414,12 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)tapNewItemFooterButton:(id)sender {
     //[self newFoodItemTap:sender];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    nc.delegate = self; // protocol listener
     [self presentViewController:nc animated:YES completion:NULL];
     
 }
@@ -423,18 +427,9 @@
 - (IBAction)newFoodItemTap:(UIBarButtonItem *)sender {
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *nc = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    UINavigationController *nc = (SearchNavigationController *)[sb instantiateViewControllerWithIdentifier:@"AddFoodViewController"];
+    nc.delegate = self; // protocol listener
     [self presentViewController:nc animated:YES completion:NULL];
-    /*UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Input method"
-                                                     message:@""
-                                                    delegate:self
-                                           cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles: nil];
-    
-    [alert addButtonWithTitle:@"Carb count"];
-    [alert addButtonWithTitle:@"Food name"];
-    alert.tag = 0;
-    [alert show];*/
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
@@ -496,7 +491,6 @@
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     return (([string isEqualToString:filtered])&&(newLength <= 3));
 }
-
 
 
 @end
