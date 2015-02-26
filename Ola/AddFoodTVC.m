@@ -38,6 +38,19 @@
     NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     self.dataFoodList = [[NSMutableArray alloc] initWithArray:json];
     
+    NSMutableIndexSet *discardedItems = [NSMutableIndexSet indexSet];
+    NSUInteger index = 0;
+    // Loop through array, removing really long entries..
+    for (id object in self.dataFoodList) {
+        // do something with object
+        NSDictionary *info = (NSDictionary *)object;
+        if([info[@"Description"] length] > 39) {
+            [discardedItems addIndex:index];
+        }
+        index++;
+    }
+    [self.dataFoodList removeObjectsAtIndexes:discardedItems];
+    
     self.filteredFoodList = [NSMutableArray arrayWithCapacity:[self.dataFoodList count]];
     [self.olaSearchBar setDelegate:self];
     [self.searchDisplayController setDelegate:self];
@@ -88,9 +101,9 @@
     cell.textLabel.lineBreakMode = UILineBreakModeTailTruncation;
     
     if(indexPath.row == 0 && tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.textLabel.text = [NSString stringWithFormat:@"Add \"%@\"", self.olaSearchBar.text];
-        cell.textLabel.textColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1];
-        cell.detailTextLabel.text = @"";
+        cell.textLabel.text = [NSString stringWithFormat:@"Add custom entry \"%@\"", self.olaSearchBar.text];
+        cell.textLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Add \"%@\" with your own carb count", self.olaSearchBar.text];
     } else {
         NSLog(@"%@", info);
         CGFloat strFloat = (CGFloat)[info[@"Carbohydrate (g)"] floatValue];
@@ -98,7 +111,7 @@
         
         // Configure the cell...
         cell.textLabel.text = info[@"Description"];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%dg carbs", grams];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%dg carb, %@", grams, info[@"Measure"]];
     }
     
     return cell;
@@ -112,6 +125,16 @@
     // Filter the array using NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.Description contains[c] %@", searchString];
     self.filteredFoodList = [NSMutableArray arrayWithArray:[self.dataFoodList filteredArrayUsingPredicate:predicate]];
+    // Sort by length asc
+    NSArray *sortedResults = [self.filteredFoodList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDictionary *info1 = (NSDictionary *)a;
+        NSDictionary *info2 = (NSDictionary *)b;
+        NSUInteger first = [info1[@"Description"] length];
+        NSUInteger second = [info2[@"Description"] length];
+        return (first > second);
+    }];
+    self.filteredFoodList = [NSMutableArray arrayWithArray:sortedResults];
+    
     return YES;
 }
 
