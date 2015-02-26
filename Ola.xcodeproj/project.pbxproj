@@ -32,6 +32,16 @@
 		5AAB87461A91022F00130169 /* SearchNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AAB87451A91022F00130169 /* SearchNavigationController.m */; };
 		5AE890771A82A19F0046773F /* AddFoodTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890761A82A19F0046773F /* AddFoodTVC.m */; };
 		5AE890791A82AD0A0046773F /* convertcsv.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AE890781A82AD0A0046773F /* convertcsv.json */; };
+		829A5C8B1A96BB9100463318 /* AddDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5C8A1A96BB9100463318 /* AddDataTableViewController.swift */; };
+		829A5C8D1A96E28800463318 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5C8C1A96E28800463318 /* DateUtil.swift */; };
+		829A5C921A9AB91500463318 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 829A5C911A9AB91500463318 /* HealthKit.framework */; };
+		82C344631A9B2D2E00E2BD59 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344621A9B2D2E00E2BD59 /* LineChart.swift */; };
+		82C344651A9B2D7C00E2BD59 /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */; };
+		82C344671A9B2DF500E2BD59 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344661A9B2DF500E2BD59 /* ChartViewController.swift */; };
+		82CC9A631A83151D00447CD4 /* GlucoseGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A621A83151D00447CD4 /* GlucoseGraphView.swift */; };
+		82CC9A651A831FF700447CD4 /* InsulinGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A641A831FF700447CD4 /* InsulinGraphView.swift */; };
+		82CC9A671A83204C00447CD4 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A661A83204C00447CD4 /* AxesDrawer.swift */; };
+		82CC9A691A832D9500447CD4 /* GlucoseGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A681A832D9500447CD4 /* GlucoseGraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +104,18 @@
 		5AE890751A82A19F0046773F /* AddFoodTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodTVC.h; sourceTree = "<group>"; };
 		5AE890761A82A19F0046773F /* AddFoodTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodTVC.m; sourceTree = "<group>"; };
 		5AE890781A82AD0A0046773F /* convertcsv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = convertcsv.json; sourceTree = "<group>"; };
+		829A5C8A1A96BB9100463318 /* AddDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDataTableViewController.swift; sourceTree = "<group>"; };
+		829A5C8C1A96E28800463318 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		829A5C901A9AB58E00463318 /* Ola.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Ola.entitlements; sourceTree = "<group>"; };
+		829A5C911A9AB91500463318 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		82C344621A9B2D2E00E2BD59 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
+		82C344661A9B2DF500E2BD59 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		82CC9A611A83151C00447CD4 /* Ola-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ola-Bridging-Header.h"; sourceTree = "<group>"; };
+		82CC9A621A83151D00447CD4 /* GlucoseGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseGraphView.swift; sourceTree = "<group>"; };
+		82CC9A641A831FF700447CD4 /* InsulinGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsulinGraphView.swift; sourceTree = "<group>"; };
+		82CC9A661A83204C00447CD4 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		82CC9A681A832D9500447CD4 /* GlucoseGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				829A5C921A9AB91500463318 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +140,7 @@
 		4A0A80301A1C0C7E001C82B6 = {
 			isa = PBXGroup;
 			children = (
+				829A5C911A9AB91500463318 /* HealthKit.framework */,
 				4A0A803B1A1C0C7E001C82B6 /* Ola */,
 				4A0A80581A1C0C7F001C82B6 /* OlaTests */,
 				4A0A803A1A1C0C7E001C82B6 /* Products */,
@@ -135,6 +159,11 @@
 		4A0A803B1A1C0C7E001C82B6 /* Ola */ = {
 			isa = PBXGroup;
 			children = (
+				82C344661A9B2DF500E2BD59 /* ChartViewController.swift */,
+				82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */,
+				82C344621A9B2D2E00E2BD59 /* LineChart.swift */,
+				829A5C901A9AB58E00463318 /* Ola.entitlements */,
+				82CC9A661A83204C00447CD4 /* AxesDrawer.swift */,
 				4A294DD11A22A8AE00CDBAFB /* FoodItem.h */,
 				4A294DD21A22A8AE00CDBAFB /* FoodItem.m */,
 				4A0A80401A1C0C7E001C82B6 /* AppDelegate.h */,
@@ -151,6 +180,11 @@
 				4A881F991A2A9E020021D691 /* EmergencyVC.h */,
 				4A881F9A1A2A9E020021D691 /* EmergencyVC.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
+				82CC9A621A83151D00447CD4 /* GlucoseGraphView.swift */,
+				829A5C8A1A96BB9100463318 /* AddDataTableViewController.swift */,
+				829A5C8C1A96E28800463318 /* DateUtil.swift */,
+				82CC9A681A832D9500447CD4 /* GlucoseGraphViewController.swift */,
+				82CC9A641A831FF700447CD4 /* InsulinGraphView.swift */,
 				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
 				4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */,
 				5AAB87441A91022F00130169 /* SearchNavigationController.h */,
@@ -178,6 +212,7 @@
 				4ABB40D61A1C313400512179 /* DoctorCommTVC.m */,
 				4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */,
 				4A0A803C1A1C0C7E001C82B6 /* Supporting Files */,
+				82CC9A611A83151C00447CD4 /* Ola-Bridging-Header.h */,
 			);
 			path = Ola;
 			sourceTree = "<group>";
@@ -258,7 +293,12 @@
 				TargetAttributes = {
 					4A0A80381A1C0C7E001C82B6 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 78S9Z656EG;
+						DevelopmentTeam = 792RDWTQDV;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					4A0A80541A1C0C7F001C82B6 = {
 						CreatedOnToolsVersion = 6.1;
@@ -312,24 +352,33 @@
 			files = (
 				4A59969E1A23F67F0086FD35 /* CustomIOS7AlertView.m in Sources */,
 				4A881F9B1A2A9E020021D691 /* EmergencyVC.m in Sources */,
+				82C344631A9B2D2E00E2BD59 /* LineChart.swift in Sources */,
 				4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */,
 				5AAB87461A91022F00130169 /* SearchNavigationController.m in Sources */,
 				4AD222631A26ABA4008AEB36 /* HomeScreenVC.m in Sources */,
+				82CC9A691A832D9500447CD4 /* GlucoseGraphViewController.swift in Sources */,
+				82CC9A631A83151D00447CD4 /* GlucoseGraphView.swift in Sources */,
 				4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */,
 				4A881F951A2A992B0021D691 /* OlaTBC.m in Sources */,
 				4ADB01E71A1FCE1600E55520 /* FoodItemsTVC.m in Sources */,
 				4AFF336D1A1F2A410024704A /* DocEmail3UIVC.m in Sources */,
 				4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */,
 				4AFF336A1A1F2A260024704A /* DocEmail2UIVC.m in Sources */,
+				82C344671A9B2DF500E2BD59 /* ChartViewController.swift in Sources */,
 				4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */,
 				4A03965F1A2442EC00E146AE /* EmailTVC.m in Sources */,
+				829A5C8B1A96BB9100463318 /* AddDataTableViewController.swift in Sources */,
 				4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */,
 				4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */,
 				4AD222601A266C48008AEB36 /* notes.m in Sources */,
+				82C344651A9B2D7C00E2BD59 /* DotCALayer.swift in Sources */,
 				4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */,
 				4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */,
+				82CC9A651A831FF700447CD4 /* InsulinGraphView.swift in Sources */,
 				4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */,
 				5AE890771A82A19F0046773F /* AddFoodTVC.m in Sources */,
+				829A5C8D1A96E28800463318 /* DateUtil.swift in Sources */,
+				82CC9A671A83204C00447CD4 /* AxesDrawer.swift in Sources */,
 				4A8EEC8F1A2574A200D7325E /* InsulinInjectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +504,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Ola/Ola.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
@@ -462,6 +513,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ola/Ola-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -471,6 +524,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Ola/Ola.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
@@ -478,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ola/Ola-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
