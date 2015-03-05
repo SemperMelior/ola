@@ -1006,12 +1006,14 @@ PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
                     <navigationItem key="navigationItem" title="Data" id="evR-gC-hIu">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="i3T-Yr-XNB">
                             <connections>
-                                <segue destination="Za8-En-CsP" kind="show" id="ghB-lb-Ulr"/>
+                                <action selector="addData:" destination="dPo-Z0-4hs" id="ef3-Rs-gLY"/>
+                                <segue destination="Za8-En-CsP" kind="show" identifier="addData" id="ghB-lb-Ulr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dataType" destination="MfC-cV-6Ql" id="dLj-hr-y46"/>
+                        <outlet property="timeType" destination="gaa-fF-rH0" id="OEb-Vb-bLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>

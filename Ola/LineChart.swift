@@ -32,13 +32,14 @@ class LineChart: UIControl {
     var gridVisible = false
     var axesVisible = true
     var dotsVisible = true
-    var labelsXVisible = false
+    var labelsXVisible = true
     var labelsYVisible = true
     var areaUnderLinesVisible = false
     var numberOfGridLinesX: CGFloat = 10
     var numberOfGridLinesY: CGFloat = 10
     var animationEnabled = true
     var animationDuration: CFTimeInterval = 1
+    var axes = ["2pm", "6pm", "10pm", "2am", "6am", "10am", "2pm"]
     
     var dotsBackgroundColor = UIColor.whiteColor()
     
@@ -531,19 +532,31 @@ class LineChart: UIControl {
         drawYGrid()
     }
     
-    
+    func changeXAxisTimePeriod(period:Int){
+        var timePeriods = [[String]]()
+        var day = ["12p", "2p", "6p", "10p", "2a", "6a", "10a", "2p"]
+        var week = ["T", "W", "T", "F", "S", "S", "M", "T"]
+        var month = ["Feb 3", "8", "13", "18", "23", "28", "Mar 3"]
+        var year = ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"]
+        timePeriods.append(day)
+        timePeriods.append(week)
+        timePeriods.append(month)
+        timePeriods.append(year)
+        axes = timePeriods[period]
+    }
     
     /**
     * Draw x labels.
     */
     func drawXLabels() {
+        var days = axes//["W", "T", "F", "S", "S", "M", "T", "W"]
         var xAxisData = self.dataStore[0]
         var scaledDataXAxis = scaleDataXAxis(xAxisData)
         for (index, scaledValue) in enumerate(scaledDataXAxis) {
             var label = UILabel(frame: CGRect(x: scaledValue + (axisInset/2), y: self.bounds.height-axisInset, width: axisInset, height: axisInset))
             label.font = UIFont.systemFontOfSize(10)
             label.textAlignment = NSTextAlignment.Center
-            label.text = String(index)
+            label.text = String(days[index])
             self.addSubview(label)
         }
     }

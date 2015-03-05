@@ -38,6 +38,7 @@
 		82C344631A9B2D2E00E2BD59 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344621A9B2D2E00E2BD59 /* LineChart.swift */; };
 		82C344651A9B2D7C00E2BD59 /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */; };
 		82C344671A9B2DF500E2BD59 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C344661A9B2DF500E2BD59 /* ChartViewController.swift */; };
+		82C513731A9F8769002D806D /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C513721A9F8769002D806D /* HealthManager.swift */; };
 		82CC9A631A83151D00447CD4 /* GlucoseGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A621A83151D00447CD4 /* GlucoseGraphView.swift */; };
 		82CC9A651A831FF700447CD4 /* InsulinGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A641A831FF700447CD4 /* InsulinGraphView.swift */; };
 		82CC9A671A83204C00447CD4 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC9A661A83204C00447CD4 /* AxesDrawer.swift */; };
@@ -111,6 +112,7 @@
 		82C344621A9B2D2E00E2BD59 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
 		82C344661A9B2DF500E2BD59 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		82C513721A9F8769002D806D /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		82CC9A611A83151C00447CD4 /* Ola-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ola-Bridging-Header.h"; sourceTree = "<group>"; };
 		82CC9A621A83151D00447CD4 /* GlucoseGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseGraphView.swift; sourceTree = "<group>"; };
 		82CC9A641A831FF700447CD4 /* InsulinGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsulinGraphView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				82C344661A9B2DF500E2BD59 /* ChartViewController.swift */,
 				82C344641A9B2D7C00E2BD59 /* DotCALayer.swift */,
 				82C344621A9B2D2E00E2BD59 /* LineChart.swift */,
+				82C513721A9F8769002D806D /* HealthManager.swift */,
 				829A5C901A9AB58E00463318 /* Ola.entitlements */,
 				82CC9A661A83204C00447CD4 /* AxesDrawer.swift */,
 				4A294DD11A22A8AE00CDBAFB /* FoodItem.h */,
@@ -302,6 +305,7 @@
 					};
 					4A0A80541A1C0C7F001C82B6 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 792RDWTQDV;
 						TestTargetID = 4A0A80381A1C0C7E001C82B6;
 					};
 				};
@@ -356,6 +360,7 @@
 				4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */,
 				5AAB87461A91022F00130169 /* SearchNavigationController.m in Sources */,
 				4AD222631A26ABA4008AEB36 /* HomeScreenVC.m in Sources */,
+				82C513731A9F8769002D806D /* HealthManager.swift in Sources */,
 				82CC9A691A832D9500447CD4 /* GlucoseGraphViewController.swift in Sources */,
 				82CC9A631A83151D00447CD4 /* GlucoseGraphView.swift in Sources */,
 				4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */,
@@ -542,6 +547,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -553,6 +560,7 @@
 				INFOPLIST_FILE = OlaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ola.app/Ola";
 			};
 			name = Debug;
@@ -561,6 +569,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -568,6 +578,7 @@
 				INFOPLIST_FILE = OlaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ola.app/Ola";
 			};
 			name = Release;

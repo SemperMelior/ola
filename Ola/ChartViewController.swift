@@ -4,42 +4,107 @@ import QuartzCore
 
 class ChartViewController: UIViewController, LineChartDelegate {
 
-    
+    let healthManager:HealthManager = HealthManager()
     
     var label = UILabel()
     var lineChart: LineChart?
     var label2 = UILabel()
-    var glucoseData: Array<CGFloat> = [3, 4, 9, 11, 13, 15]
-    var insulinData: Array<CGFloat> = [2, 3, 1, 4, 5, 4, 3]
+    
+    var xLabels = ["12pm", "2pm", "6pm", "10pm", "2am", "6am", "10am", "2pm"]
+    var day = ["12pm", "2pm", "6pm", "10pm", "2am", "6am", "10am", "2pm"]
+    var week = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"]
+    var month = ["Feb 3", "Feb 8", "Feb 13", "Feb 18", "Feb 23", "Feb 28", "Mar 3"]
+    var year = ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"]
+    
+    var currData: Array<CGFloat> = [3, 4, 9, 11, 13, 15, 12]
+    var glucoseDay: Array<CGFloat> = [3, 4, 9, 11, 13, 15, 12]
+    var glucoseWeek: Array<CGFloat> = [14, 14, 19, 21, 13, 15, 22]
+    var glucoseMonth: Array<CGFloat> = [24, 14, 9, 21, 9, 15, 21]
+    var insulinWeek: Array<CGFloat> = [4, 4, 9, 1, 3, 5, 2]
+    var insulinDay: Array<CGFloat> = [2, 3, 1, 4, 5, 4, 6]
+    var glucoseYear: Array<CGFloat> = [12, 4, 9, 5, 16, 15, 12, 13, 5, 12, 7, 8]
+    var insulinYear: Array<CGFloat> = [2, 4, 3, 5, 6, 5, 2, 3, 5, 2, 7, 8]
     
     @IBOutlet weak var dataType: UISegmentedControl!
-    @IBAction func dataTypeChanged(sender: UISegmentedControl) {
-        self.lineChart!.clear()
-        var data = glucoseData
+    @IBOutlet weak var timeType: UISegmentedControl!
+    func setCurrentData(){
         var unitString = "mg/dL"
-        if sender.selectedSegmentIndex == 1 {
-            data = insulinData
+        if dataType.selectedSegmentIndex == 0{
+            if timeType.selectedSegmentIndex == 0{
+                currData = glucoseDay
+                xLabels = day
+            }else if timeType.selectedSegmentIndex == 1{
+                currData = glucoseWeek
+                xLabels = week
+            }else if timeType.selectedSegmentIndex == 2{
+                currData = glucoseMonth
+                xLabels = month
+            }else {
+                currData = glucoseYear
+                xLabels = year
+            }
+        }else{
             unitString = "IU"
+            if timeType.selectedSegmentIndex == 0{
+                currData = insulinDay
+                xLabels = day
+            }else if timeType.selectedSegmentIndex == 1{
+                currData = insulinWeek
+                xLabels = week
+            }else if timeType.selectedSegmentIndex == 2{
+                currData = glucoseWeek
+                xLabels = month
+            }else {
+                currData = insulinYear
+                xLabels = year
+            }
+            
         }
-        self.lineChart!.addLine(data)
-        label.text = " "
-        var average: Double = (data as AnyObject).valueForKeyPath("@avg.self") as Double
+        var average: Double = (currData as AnyObject).valueForKeyPath("@avg.self") as Double
         var avgString = String(format: "%.2f", average)
         label2.text = "Average: \(avgString) \(unitString)"
     }
+    @IBAction func dataTypeChanged(sender: UISegmentedControl) {
+        self.lineChart!.clear()
+        self.setCurrentData()
+        self.lineChart!.addLine(currData)
+        label.text = " "
+        
+    }
     
     @IBAction func timePeriodChanged(sender: UISegmentedControl) {
+        self.lineChart!.clear()
+        self.setCurrentData()
+        self.lineChart!.addLine(currData)
+        self.lineChart!.changeXAxisTimePeriod(sender.selectedSegmentIndex)
+        label.text = " "
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authorizeHealthKit()
         drawNewGraph()
         
         
     }
+    func authorizeHealthKit() {
+        healthManager.authorizeHealthKit { (authorized,  error) -> Void in
+            if authorized {
+                println("HealthKit authorization received.")
+            }
+            else
+            {
+                println("HealthKit authorization denied!")
+                if error != nil {
+                    println("\(error)")
+                }
+            }
+        }
+    }
     
     func drawNewGraph() {
-        var data = glucoseData
+        var data = currData
         var views: Dictionary<String, AnyObject> = [:]
         
         label.text = " "
@@ -90,19 +155,28 @@ class ChartViewController: UIViewController, LineChartDelegate {
     
     
     
+    
     /**
      * Line chart delegate method.
      */
     func didSelectDataPoint(x: CGFloat, yValues: Array<CGFloat>) {
         if dataType.selectedSegmentIndex == 0 {
-            label.text = "x: \(x)     \(yValues[0]) mg/dL"
+            label.text = "\(xLabels[Int(x)])     \(yValues[0]) mg/dL"
         }else{
-            label.text = "x: \(x)     \(yValues[0]) IU"
+            label.text = "\(xLabels[Int(x)])     \(yValues[0]) IU"
         }
         
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier ==  "addData" {
+            
+            let dvc = segue.destinationViewController as AddDataTableViewController
+            dvc.healthManager = healthManager
+            
+        }
+    }
     
     /**
      * Redraw chart on device rotation.

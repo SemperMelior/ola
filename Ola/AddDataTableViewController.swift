@@ -10,7 +10,7 @@ import UIKit
 
 
 class AddDataTableViewController: UITableViewController {
-
+    var healthManager:HealthManager?
     @IBAction func toggleDataType(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             unitsLabel.text = "IU"
@@ -20,6 +20,15 @@ class AddDataTableViewController: UITableViewController {
     }
     /*MOST IMPORTANT FUNCTION THIS WILL ADD THE DATA AND MAYBE PUSH IT TO HEALTHKIT*/
     @IBAction func addData(sender: UIBarButtonItem) {
+        var date = DatePickerView.date
+        var time = NSDateComponents()
+        var value = (unitsField.text as NSString).doubleValue
+        healthManager?.saveGlucose(value, date:date)
+        let alert = UIAlertView()
+        alert.title = "Added"
+        alert.message = "Added data to Healthkit"
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
     @IBOutlet weak var unitsLabel: UILabel!
     @IBOutlet weak var unitsField: UITextField!
